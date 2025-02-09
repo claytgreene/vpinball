@@ -1,3 +1,59 @@
 .project
 build/
 /CMakeLists.txt
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Visual Studio Swap Files (.swp)
+*.swp
+
+# Visual Studio hidden folder to track open files in the editor
+.vs
+
+# Visual Studio User Settings File
+*.user
+
+# Stackdump files
+*.stackdump
+
+# Misc files to ignore
+*.aps
+*.tlb
+*.bak
+*.build/
+
+# vpinball project specific ignores
+/shader
+vpinball.h
+vpinball_i.c

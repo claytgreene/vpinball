@@ -1,0 +1,4 @@
+NOTE:  To find all my changes you can search the solution for 'jarringmars'.  I've placed commends above each line or block that I've added
+
+2025_01_03	Added MenuItem 'View/ClayTest' to vpinball.cpp.  Need to open a table file then when clicked a MessageBox is popped.
+2025_01_06	Added a new button 'Show Where Used' (IDC_SHOW_WHERE_USED) to the 'Image Manager' dialog.

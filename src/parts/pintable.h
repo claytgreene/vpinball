@@ -41,6 +41,14 @@ struct ProtectionData
    int32_t spare2;
 };
 
+//Added below block - jarringmars
+struct WhereUsedInfo
+{
+   string searchObjectName;
+   CComBSTR whereUsedObjectname;
+   string WhereUsedPropertyName;
+};
+
 class ScriptGlobalTable;
 
 class PinTableMDI : public CMDIChild
@@ -377,6 +385,8 @@ public:
    Texture* ImportImage(const string &filename, const string &imageName);
    void ListImages(HWND hwndListView);
    int AddListImage(HWND hwndListView, Texture *const ppi);
+   void ShowWhereImagesUsed(vector<WhereUsedInfo> &);
+   void ShowWhereImageUsed(vector<WhereUsedInfo> &,Texture *const ppi);
    void RemoveImage(Texture *const ppi);
    HRESULT LoadImageFromStream(IStream *pstm, size_t idx, int version, bool resize_on_low_mem);
    Texture *GetImage(const string &szName) const;
@@ -706,6 +716,8 @@ public:
 
    string m_envImage;
 
+   //Added below line - jarringmars
+   vector<IScriptable *> m_vscript;
    vector<IEditable *> m_vedit;
    vector<IEditable *> m_layer[MAX_LAYERS];
    vector<ISelect *> m_allHitElements;

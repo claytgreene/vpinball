@@ -156,6 +156,7 @@ BEGIN
     EDITTEXT        IDC_ALPHA_MASK_EDIT,459,92,40,14,ES_AUTOHSCROLL
     LTEXT           "Alpha Mask\r\n(<= masks out)\r\n(0..255)",IDC_STATIC_ALPHA,460,65,54,25
     PUSHBUTTON      "&Update All",IDC_UPDATE_ALL_BUTTON,387,62,50,14
+    PUSHBUTTON      "Where Used",IDC_SHOW_WHERE_USED,387,80,50,14
     CONTROL         "Use name on export",IDC_CHECK_RENAME_ON_EXPORT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,387,127,77,10
     DEFPUSHBUTTON   "&OK",IDC_OK,457,110,50,14
 END
@@ -2441,6 +2442,15 @@ BEGIN
     EDITTEXT        IDC_INFOTEXT_EDIT,0,7,512,212,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
 END
 
+IDD_WHEREUSEDDIALOG DIALOGEX 0, 0, 339, 288
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Show Where Used"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "",201,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,6,4,262,274
+    DEFPUSHBUTTON   "&OK",IDC_OK,280,7,50,14
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -2833,6 +2843,12 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 240
     END
+
+    IDD_WHEREUSEDDIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 338
+        BOTTOMMARGIN, 285
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -2862,50 +2878,6 @@ BEGIN
 END
 
 #endif    // APSTUDIO_INVOKED
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Version
-//
-
-VS_VERSION_INFO VERSIONINFO
- FILEVERSION VP_VERSION_DIGITS
- PRODUCTVERSION VP_VERSION_DIGITS
- FILEFLAGSMASK 0x3fL
-#ifdef _DEBUG
- FILEFLAGS 0x1L
-#else
- FILEFLAGS 0x0L
-#endif
- FILEOS 0x4L
- FILETYPE 0x1L
- FILESUBTYPE 0x0L
-BEGIN
-    BLOCK "StringFileInfo"
-    BEGIN
-        BLOCK "040904b0"
-        BEGIN
-#ifdef ENABLE_SDL
-            VALUE "FileDescription", "Visual Pinball OpenGL 10.8.0"
-            VALUE "OriginalFilename", "VPinballX_GL.exe"
-            VALUE "ProductName", "Visual Pinball OpenGL"
-#else
-            VALUE "FileDescription", "Visual Pinball 10.8.0"
-            VALUE "OriginalFilename", "VPinballX.exe"
-            VALUE "ProductName", "Visual Pinball"
-#endif
-            VALUE "FileVersion", VP_VERSION_STRING_POINTS_FULL
-            VALUE "InternalName", "Visual Pinball"
-            VALUE "LegalCopyright", "Copyright 2000-2025"
-            VALUE "ProductVersion", VP_VERSION_STRING_POINTS_FULL 
-        END
-    END
-    BLOCK "VarFileInfo"
-    BEGIN
-        VALUE "Translation", 0x409, 1200
-    END
-END
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -3015,6 +2987,7 @@ BEGIN
         MENUITEM "&Script",                     ID_EDIT_SCRIPT
         MENUITEM "&Backglass/POV\t Ctrl+Space", ID_EDIT_BACKGLASSVIEW
         MENUITEM "&Notes",                      ID_TABLE_NOTES
+        MENUITEM "&ClayTest",                   ID_CLAYTEST
     END
     POPUP "&Insert"
     BEGIN
@@ -3061,9 +3034,6 @@ BEGIN
     BEGIN
         MENUITEM "&Audio Options...",           ID_EDIT_AUDIOOPTIONS
         MENUITEM "&Video/Graphics Options...",  ID_EDIT_VIDEOOPTIONS
-#ifdef ENABLE_SDL
-        MENUITEM "V&R Settings...",             ID_EDIT_VROPTIONS
-#endif
         MENUITEM "INI/&Editor/UI Options...",   ID_EDIT_EDITOROPTIONS
         MENUITEM "Configure &Keys, Nudge and DOF...", ID_EDIT_KEYS
         MENUITEM "Configure (Optional) Global &Physics Sets...", ID_EDIT_PHYSICSOPTIONS
@@ -3823,6 +3793,11 @@ BEGIN
     0
 END
 
+IDD_WHEREUSEDDIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -3838,6 +3813,9 @@ BEGIN
     IDS_TB_WALL             "Wall"
     IDS_TB_FLIPPER          "Flipper"
     IDS_TB_PLAY             "Play"
+    IDS_WHERE_USED_SRC_IMAGE "Source Image"
+    IDS_WHERE_USED_OBJECT_NAME "Used By Name"
+    IDS_WHERE_USED_PROPERTY "Used By Property Name"
 END
 
 STRINGTABLE

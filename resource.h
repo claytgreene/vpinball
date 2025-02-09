@@ -121,14 +121,17 @@
 #define IDC_X_OFFSET_EDIT2              106
 #define IDC_KICKER_ORIENTATION_EDIT     107
 #define IDC_Y_OFFSET_EDIT2              107
+#define IDS_WHERE_USED_SRC_IMAGE        107
 #define IDC_TABLE_SCALEZ                108
 #define ID_ASSIGN_TO_CURRENT_LAYER      108
 #define IDR_FLIPPER                     108
 #define IDC_SHOW_BRACKET_CHECK          108
+#define IDS_WHERE_USED_OBJECT_NAME      108
 #define IDC_SELECT                      109
 #define DISPID_Table_GridSize           109
 #define IDS_ASSIGNTO                    109
 #define IDC_CAP_VISIBLE_CHECK           109
+#define IDS_WHERE_USED_PROPERTY         109
 #define IDC_ELASTICITY_EDIT             110
 #define ID_INSERT_WALL                  110
 #define IDC_LIGHT                       110
@@ -310,6 +313,7 @@
 #define IDI_VPINBALL                    218
 #define IDC_STEP                        218
 #define IDC_STATUSNAME                  218
+#define IDC_SHOW_WHERE_USED             219
 #define IDR_SURFACEMENU                 221
 #define IDD_ROTATE                      222
 #define IDR_MULTIMENU                   222
@@ -1206,6 +1210,8 @@
 #define IDD_SCRIPT_ERROR                868
 #define IDC_STATIC_INSTALL_DEBUGGER     868
 #define IDC_ERROR_EDIT                  869
+#define IDD_IMAGEDIALOG1                869
+#define IDD_WHEREUSEDDIALOG             869
 #define IDC_SCRIPT_CONTINUE             870
 #define IDC_SCRIPT_STOP                 871
 #define IDC_SUPPRESS_ERRORS_CHECK       872
@@ -1343,6 +1349,7 @@
 #define ID_TABLE_RENDERPROBEMANAGER     4027
 #define ID_TABLE_LIVEEDIT               4028
 #define ID_TABLE_LOCK                   4029
+#define ID_CLAYTEST                     4030
 #define IDC_ENABLE_EMREEL_CHECK         13432
 #define IDC_ENABLE_DECAL_CHECK          13433
 #define IDC_BG_TEST_DESKTOP_CHECK       13434
@@ -1457,9 +1464,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        677
+#define _APS_NEXT_RESOURCE_VALUE        678
 #define _APS_NEXT_COMMAND_VALUE         4030
-#define _APS_NEXT_CONTROL_VALUE         929
+#define _APS_NEXT_CONTROL_VALUE         930
 #define _APS_NEXT_SYMED_VALUE           188
 #endif
 #endif

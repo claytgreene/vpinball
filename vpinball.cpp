@@ -869,6 +869,19 @@ bool VPinball::ParseCommand(const size_t code, const bool notify)
          GetNotesDocker()->ShowWindow();
       return true;
    }
+   //Added below case - jarringmars
+   case ID_CLAYTEST:
+   {
+      LPCSTR myPath;
+
+      CComObject<PinTable> *const ptCur = GetActiveTable();
+      if (ptCur)
+      {
+         myPath = ptCur->m_szFileName.c_str();
+      }
+      MessageBox(myPath, "Table Path", MB_OK);
+      return true;
+   }
    case ID_TABLE_FONTMANAGER:
    {
       CComObject<PinTable> * const ptCur = GetActiveTable();
@@ -1198,6 +1211,8 @@ void VPinball::SetEnableMenuItems()
       mainMenu.EnableMenuItem(IDC_PASTEAT, ptCur->IsLocked() ? grayed : enabled);
       mainMenu.EnableMenuItem(ID_DELETE, ptCur->IsLocked() ? grayed : enabled);
       mainMenu.EnableMenuItem(ID_TABLE_NOTES, enabled);
+      //Added below line - jarringmars
+      mainMenu.EnableMenuItem(ID_CLAYTEST, enabled);
       mainMenu.EnableMenuItem(ID_EDIT_SETDEFAULTPHYSICS, ptCur->IsLocked() ? grayed : enabled);
 
       // enable/disable insert tool
@@ -1247,6 +1262,8 @@ void VPinball::SetEnableMenuItems()
       mainMenu.EnableMenuItem(ID_EDIT_SCRIPT, grayed);
       mainMenu.EnableMenuItem(ID_EDIT_BACKGLASSVIEW, grayed);
       mainMenu.EnableMenuItem(ID_TABLE_NOTES, grayed);
+      //Added below line - jarringmars
+      mainMenu.EnableMenuItem(ID_CLAYTEST, grayed);
       mainMenu.EnableMenuItem(ID_EDIT_SETDEFAULTPHYSICS, grayed);
 
       mainMenu.EnableMenuItem(ID_TABLE_PLAY, grayed);
