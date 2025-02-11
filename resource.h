@@ -415,6 +415,7 @@
 #define IDC_APPLY_TO_TABLE              280
 #define IDC_FONT_DIALOG_BUTTON          280
 #define IDC_ADD_LAYER_BUTTON            280
+#define IDC_EDIT_CONTROL                280
 #define IDC_ITEMLIST                    281
 #define IDC_OUT                         281
 #define IDC_SENDMAIL                    281
@@ -1068,6 +1069,7 @@
 #define IDC_COLOR_BUTTON1               765
 #define IDC_DELETE_LAYER_BUTTON         765
 #define IDC_RESET_WINDOW                765
+#define IDC_REFRESH_LIST                765
 #define IDC_LAYER_FILTER_CASE_BUTTON    766
 #define IDC_COLOR_BUTTON2               766
 #define IDC_SAVE_ALL                    766
@@ -1269,6 +1271,8 @@
 #define IDC_SAVE_OVERRIDES              925
 #define IDC_INFOTEXT_EDIT               926
 #define IDC_SYNC                        928
+#define IDC_LIST1                       930
+#define IDC_WHERE_LIST                  930
 #define IDC_LAYBACK_EDIT                1040
 #define IDC_3D_STEREO_SEPARATION_EDIT   1041
 #define IDC_3D_STEREO_ZPD_EDIT          1042
@@ -1466,7 +1470,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        678
 #define _APS_NEXT_COMMAND_VALUE         4030
-#define _APS_NEXT_CONTROL_VALUE         930
+#define _APS_NEXT_CONTROL_VALUE         931
 #define _APS_NEXT_SYMED_VALUE           188
 #endif
 #endif

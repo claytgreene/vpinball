@@ -29,6 +29,7 @@ private:
    void LoadPosition();
    void SavePosition();
    void UpdateImages();
+   void AddToolTip(const char* const text, HWND parentHwnd, HWND toolTipHwnd, HWND controlHwnd);
 
    static int m_columnSortOrder;
    static bool m_doNotChange;  // to avoid triggering LVN_ITEMCHANGING or LVN_ITEMCHANGED code on deletion
@@ -52,18 +53,11 @@ protected:
 private:
    CResizer m_resizer;
 
-   //Remmed below block because I don't have any functions called by buttons yet - jarringmars
-   void Import();
-   void Export();
-   //void DeleteWhereUsed();
-   void Reimport();
-   void UpdateAll();
    void ShowWhereUsed();
-   void ReimportFrom();
    void LoadPosition();
    void SavePosition();
-   //void UpdateWhereUsed();
-
+   void RefreshList();
+   void AddToolTip(const char* const text, HWND parentHwnd, HWND toolTipHwnd, HWND controlHwnd);
    static int m_columnSortOrder;
    static bool m_doNotChange; // to avoid triggering LVN_ITEMCHANGING or LVN_ITEMCHANGED code on deletion
 };
