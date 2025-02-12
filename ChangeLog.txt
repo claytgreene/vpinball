@@ -1,0 +1,5 @@
+NOTE:  To find all my changes you can search the solution for 'jarringmars'.  I've placed commends above each line or block that I've added
+
+2025_02_03	Added MenuItem 'View/ClayTest' to vpinball.cpp.  Need to open a table file then when clicked a MessageBox is popped.
+2025_02_06	Added a new button 'Show Where Used' (IDC_SHOW_WHERE_USED) to the 'Image Manager' dialog.
+2025_02_11	The 'Show Where Used' dialog' is working properly.  Now supports an 'Edit Control' button which will put the currently selected control object into the Property edit window.  This function will pop a msgbox if a decal is selected because decals dont' have a unique name.
